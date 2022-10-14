@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" type="text/css" href="src/reg.css">
+</head>
+<body>
+<h2>You should pick  <a th:text="${backClient.getDogSpeecy()}"></a> to dog selector website!</h2>
+<h3>The date to pick up a dog is <a th:text="${backClient.getDate()}"></a> </h3>
+<h3>Choose which kind of services you want for your dog</h3>
+
+
+
+
+<div class="signupFrm">
+    <div class="wrapper">
+        <form th:method="POST" th:action="@{/services/{id}(id=${user.getId()})}"
+              th:object="${behavior_options}"  class="form">
+
+
+
+            <div class="inputContainer">
+                <label for="deprivation" class="label"> Deprivation of reproductive function?</label>
+                <a>Type: yes/no</a>
+                <input field="{deprivation}" type="text"
+                       name="deprivation" id="deprivation" class="input" placeholder="a"/>
+
+            </div>
+            <div class="inputContainer">
+                <label for="vaccination" class="label">Vaccination</label>
+                <a>Type yes/no</a>
+                <input field="vaccination" type="text" name="vaccination"
+                       id="vaccination" class="input" placeholder="a"/>
+
+            </div>
+
+
+
+            <input type="submit" class="submitBtn" value="Pick up me a dog!">
+
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
