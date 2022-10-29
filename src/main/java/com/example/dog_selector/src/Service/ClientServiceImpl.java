@@ -25,12 +25,13 @@ public class ClientServiceImpl {
 
 
 
+
     public List<Observer> getAllClients(){
         List<Observer> observers = new ArrayList<>();
      List<BackClient> backClients = clientRepository.findAll();
        for(BackClient client : backClients)
        {
-           Observer observer = new Client(client.getDogBayer(),
+           Observer observer = new Client(client.getDogBayer(),client.getDogSpeecyForDB(),
                    client.getDogSpeecy(),client.getDate());
            observers.add(observer);
 
@@ -39,7 +40,8 @@ public class ClientServiceImpl {
     }
     public void addNewClient(Observer observer)
     {
-        BackClient client = new BackClient(observer.getName(),observer.getDogBreed(),observer.getDate());
+        BackClient client = new BackClient(observer.getName(),observer.getDogSpeecyForDB(),
+                observer.getDogBreed(),observer.getDate());
         clientRepository.save(client);
     }
 

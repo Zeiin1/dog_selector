@@ -20,9 +20,16 @@ public class UserServiceImpl {
     private boolean isLogin = false;
     private boolean adminIsLogin = false;
 
-    public boolean login(User user)
+    public User login(User user)
     {
-    return true;
+        User user1 = userRepository.findUserByLogin(user.getLogin());
+      if(user1.getPassword().equals(user.getPassword()))
+      {
+          return user1;
+      }
+      else{
+          return null;
+      }
 
     }
     public void register(User user)

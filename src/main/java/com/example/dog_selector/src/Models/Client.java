@@ -3,6 +3,8 @@ package com.example.dog_selector.src.Models;
 
 import com.example.dog_selector.src.Observer.Observer;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +14,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
+@Data
+@Getter
+@Setter
 public class Client implements Observer {
 
     private Long id;
@@ -19,14 +24,16 @@ public class Client implements Observer {
     private String dogSpeecy;
     private String date;
     private String description;
+    private String dogSpeecyForDB;
     private double cost;
 
     public Client() {}
 
-    public Client(String dogBayer, String dogSpeecy, String date) {
+    public Client(String dogBayer,String dogSpeecyForDB, String dogSpeecy, String date) {
         this.dogBayer = dogBayer;
         this.dogSpeecy = dogSpeecy;
         this.date = date;
+        this.dogSpeecyForDB = dogSpeecyForDB;
     }
 
     @Override

@@ -23,15 +23,17 @@ public class BackClient {
     private Long id;
     private String dogBayer;
     private String dogSpeecy;
+    private String dogSpeecyForDB;
     private String date;
     private String description;
     private double cost;
 
-    public BackClient( String dogBayer, String dogSpeecy, String date) {
+    public BackClient( String dogBayer,String dogSpeecyForDB,String dogSpeecy, String date) {
         this.id = id;
         this.dogBayer = dogBayer;
         this.dogSpeecy = dogSpeecy;
         this.date = date;
+        this.dogSpeecyForDB = dogSpeecyForDB;
     }
 
     public BackClient() {

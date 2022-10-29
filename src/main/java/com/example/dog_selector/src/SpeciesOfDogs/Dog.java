@@ -45,6 +45,7 @@ public abstract class Dog implements DescriptionOfDog {
     public String intellect;
     public String mood;
     public String lifeStyle;
+    public static Dog dogInstance;
 
     public DescriptionOfDog getDescriptionOfDog(String breed)
     {
@@ -56,7 +57,7 @@ public abstract class Dog implements DescriptionOfDog {
         for(Dog forCheck: dogList){
             if(forCheck.getDogSpeecy().equals(breed));
             {
-                return (DescriptionOfDog) forCheck;
+                return  forCheck;
             }
 
             }
@@ -81,7 +82,7 @@ public abstract class Dog implements DescriptionOfDog {
 
             }
         }
-        return null;
+        return "Corgi";
 
     }
 

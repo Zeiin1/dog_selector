@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Balto - result</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/selector.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+</head>
+
+<body>
+<div class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo" style="width: 200px;"><a href="/"><img src="/images/balto.png"></a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <h1 class="call_text">Call Us : +7(708) 517-64-91</h1>
+                </form>
+                <div class="search_icon">
+                    <ul>
+                        <li><a href="/login">LOGIN</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+    <div class="about_section layout_padding">
+        <div class="container">
+
+
+
+            <div class="text-center">
+                <div class=" col-md-12">
+                    <h2 class="heading-section1">INFORMATION about dog </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="about_text">You should pick</h1>
+                    <h1 th:text="${backClient.getDogSpeecyForDB()}" class="about_text"></h1>
+                    <p class="lorem_text">The date to pick up a dog is <p class="lorem_text1" th:text="${backClient.getDate()}"></p> </p>
+
+                    <p class="lorem_text2">The total cost for dog will be:  <p class="lorem_text2" th:text="${backClient.getCost()}"></p></p>>
+
+
+                    <p class="lorem_text2">Some information about your dog: </p>
+                    <p class="lorem_text1 info" th:text="${descriptionOfDog}"></p>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="image_1"><img th:src="@{/image/display/{speecyOfDog}(speecyOfDog=${backClient.getDogSpeecyForDB()})}"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <link rel="stylesheet" type="text/css" href="src/reg.css">
+</head>
+<body>
+
+
+
+<div class="signupFrm">
+    <div class="wrapper">
+        <form th:method="POST" th:action="@{/save_dog}" th:object="${dogs}" enctype="multipart/form-data"  class="form">
+            <h1 class="title">Sign up</h1>
+
+            <div class="inputContainer">
+                <label for="size" class="label">size</label>
+                <input type="text"  th:field="*{size}" id="size" class="input" placeholder="a"/>
+
+            </div>
+
+            <div class="inputContainer">
+                <label for="intellect" class="label">intellect</label>
+                <input type="text"  th:field="*{intellect}" id="intellect" class="input" placeholder="a"/>
+
+            </div>
+
+            <div class="inputContainer">
+                <label for="mood" class="label">mood</label>
+                <input type="text" th:field="*{mood}" id="mood" class="input" placeholder="a">
+
+            </div>
+            <div class="inputContainer">
+                <label for="lifeStyle" class="label">lifeStyle</label>
+                <input type="text" th:field="*{lifeStyle}" id="lifeStyle" class="input" placeholder="a">
+
+            </div>
+
+            <div class="inputContainer">
+                <label for="dogSpeecy" class="label">dogSpeecy</label>
+                <input type="text" th:field="*{dogSpeecy}" id="dogSpeecy" class="input" placeholder="a">
+
+            </div>
+
+            <input type="file"  name="file">
+
+
+
+
+
+            <input type="submit" class="submitBtn" value="Sign up">
+            <a href="/login">Already have account? Sign in</a>
+        </form>
+    </div>
+</div>
+
+
+
+</body>
+</html>
