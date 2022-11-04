@@ -13,9 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>dog_selector</name>
     <description>dog_selector</description>
-    <properties>
-        <java.version>8</java.version>
-    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
