@@ -190,12 +190,7 @@ public class MainController {
         String speecyOfDogForDB =  dogsService.findDogSpeecy(dog.getSize(),dog.getMood(),
                 dog.getIntellect(),dog.getLifeStyle());
         String speecyOfDog = dog.defineTypeOfDog(dog);
-        System.out.println("******************************************************");
-        System.out.println("Message to Admin!");
-        System.out.println(user.getFirstname()+ " wants "+ speecyOfDogForDB +
-                " what date dog will be available to pick up");
-        System.out.println();
-        String date = scan.next();
+        String date = "14 days";
         Observer client = new Client(user.getFirstname(),speecyOfDogForDB,speecyOfDog,date);
         clientService.addNewClient(client);
         for (SelectedDog selectedDog : selectedDogList) {
