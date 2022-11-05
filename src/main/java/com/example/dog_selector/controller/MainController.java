@@ -96,11 +96,11 @@ public class MainController {
            return "redirect:/dog_select/"+user1.getId();
        }
     }
-    @DeleteMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String deleteDog(@PathVariable("id")Long id)
     {
         dogsService.deleteDogById(id);
-        return "redirect:";
+        return "redirect:/save_dog";
     }
 
 
