@@ -100,7 +100,7 @@ public class MainController {
     public String deleteDog(@PathVariable("id")Long id)
     {
         dogsService.deleteDogById(id);
-        return "/redirect:/";
+        return "redirect:";
     }
 
 
