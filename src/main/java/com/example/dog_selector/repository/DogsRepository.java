@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface DogsRepository extends JpaRepository<Dogs,Long> {
     Dogs getDogsById(Long id);
     Dogs getDogsByDogSpeecy(String dogSpeecy);
+    void  deleteDogsById(Long id);
 }

@@ -37,4 +37,8 @@ public class DogsServiceImpl {
     public Dogs getDogBySpeecy(String speecyOfDog) {
         return dogsRepository.getDogsByDogSpeecy(speecyOfDog);
     }
+
+    public void deleteDogById(Long id) {
+        dogsRepository.deleteDogsById(id);
+    }
 }
