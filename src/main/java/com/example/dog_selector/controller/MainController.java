@@ -96,6 +96,7 @@ public class MainController {
            return "redirect:/dog_select/"+user1.getId();
        }
     }
+
     @GetMapping("/delete/{id}")
     public String deleteDog(@PathVariable("id")Long id)
     {
@@ -114,7 +115,7 @@ public class MainController {
     public String saveUserInfo(@ModelAttribute("user")User user)
     {
         userService.register(user);
-        return "redirect:dog_select/"+user.getId();
+        return "redirect:/dog_select/"+user.getId();
     }
 
     @GetMapping("/dog_select/{id}")
