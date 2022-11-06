@@ -97,12 +97,7 @@ public class MainController {
        }
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteDog(@PathVariable("id")Long id)
-    {
-        dogsService.deleteDogById(id);
-        return "redirect:/save_dog";
-    }
+
 
 
     @GetMapping("/registration")
